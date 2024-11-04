@@ -12,12 +12,12 @@ def create_data():
         print('create portfolios')
 
         nw_portfolio1 = Portfolio()
-        nw_portfolio1.portfolio_name = "test 1"
+        nw_portfolio1.portfolio_name = "test1"
         rs_test1 = uow.portfolio_repository.create(data=nw_portfolio1)
         p_test1 = Portfolio(rs_test1)
         print(p_test1.__dict__)
         nw_portfolio2 = Portfolio()
-        nw_portfolio2.portfolio_name = "test 2"
+        nw_portfolio2.portfolio_name = "test2"
         rs_test2 = uow.portfolio_repository.create(data=nw_portfolio2)
         p_test2 = Portfolio(rs_test2)
         print(p_test2.__dict__)
