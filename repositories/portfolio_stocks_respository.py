@@ -13,3 +13,18 @@ class PortfolioStockRepository:
         cursor.execute(query, params)
 
         return dict(cursor.fetchone())
+    
+    def find(self, data: PortfolioStock = dict()):
+        builder = QueryBuilder()
+
+        builder.add(data.portfolio_id, "portfolio_id = ?")
+
+        cursor = self.connection.cursor()
+        query = f"""
+            SELECT *
+            FROM portfolio_stocks
+            {builder.where}
+            """
+        cursor.execute(query, builder.params)
+
+        return cursor.fetchall()
