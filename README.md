@@ -44,7 +44,7 @@ make db-regen
 make server
 
 ## Modelo de datos
-![image](https://github.com/worker-8/tala-task/blob/main/image.png?raw=true)
+![image](https://github.com/worker-8/fintual-test/blob/main/image.png?raw=true)
 para lograr el objetivo de la prueba se genero el siguiente modelo de datos
 *PD: en la tabla task se añade el campo is_assignment*
 
