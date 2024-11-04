@@ -17,6 +17,9 @@ routes:
 server:
 	$(PYTHON) server.py
 
+db-regen:
+	sh ./bin/db-start.sh
+
 build:
 	docker build -t "talana/norman-glaves-test" .
 
