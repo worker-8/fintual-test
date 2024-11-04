@@ -42,6 +42,7 @@ make db-regen
 4. ejecutar el siguiente comando para iniciar el servidor
 ```bash
 make server
+```
 
 ## Modelo de datos
 ![image](https://github.com/worker-8/fintual-test/blob/main/image.png?raw=true)
