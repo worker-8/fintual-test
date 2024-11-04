@@ -16,7 +16,7 @@ class PortfolioRepository:
     
     def find(self, data: Portfolio = dict()):
         builder = QueryBuilder()
-
+        builder.add(data.portfolio_name, "portfolio_name = ?")
         cursor = self.connection.cursor()
         query = f"""
             SELECT *

@@ -23,6 +23,7 @@ class PortfolioStockRepository:
         query = f"""
             SELECT *
             FROM portfolio_stocks
+            INNER JOIN stock ON portfolio_stocks.stock_id = stock.id
             {builder.where}
             """
         cursor.execute(query, builder.params)

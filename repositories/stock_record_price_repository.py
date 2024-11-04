@@ -13,3 +13,19 @@ class StockRecordPriceRepository:
         cursor.execute(query, params)
 
         return dict(cursor.fetchone())
+    
+    def find(self, data: StockRecordPrice):
+        builder = QueryBuilder()
+
+        builder.add(data.stock_id, "stock_id = ?")
+        builder.add(data.date_price, "date_price = ?")
+
+        cursor = self.connection.cursor()
+        query = f"""
+            SELECT *
+            FROM stock_record_price
+            {builder.where}
+            """
+        cursor.execute(query, builder.params)
+
+        return cursor.fetchall()
